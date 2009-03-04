@@ -1,0 +1,3 @@
+sqlite3:
+  :adapter: sqlite3
+  :dbfile: vendor/plugins/do_it_later/spec/db/do_it_later.sqlite3.db

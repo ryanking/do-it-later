@@ -1,0 +1,26 @@
+DoItLater
+=========
+
+A minimalistic asynchronous job server for rails and starling
+
+
+Example
+=======
+
+class Thing < ActiveRecord::Base
+  def do_stuff
+    :stuff
+  end
+end
+
+thing = Thing.new
+thing.later :do_stuff
+
+----
+
+worker = DoItLater::Worker.new
+
+worker.run
+
+
+Copyright (c) 2009 Ryan King, released under the MIT license
