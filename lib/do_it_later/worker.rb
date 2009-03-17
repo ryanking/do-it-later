@@ -21,12 +21,6 @@ class DoItLater::Worker
         begin
           @logger.info "working on #{job[:class]}[#{job[:id]}].#{job[:method]}"
           run_job(job)
-        rescue ActiveRecord::StatementInvalid
-          if e.message.include? "MySQL server has gone away"
-            ActiveRecord::Base.verify_active_connections!
-          else
-            raise e
-          end
         rescue Interrupt
           raise e
         rescue Exception => e
